@@ -13,4 +13,8 @@ var App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
+// Someone on Stack Overflow told me this line of code makes all your errors go
+// away!
+Ember.deprecate = function() { };
+
 export default App;
