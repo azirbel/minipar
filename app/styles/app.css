@@ -1,3 +1,101 @@
-html, body {
-  margin: 20px;
+@font-face {
+  font-family: "Roboto";
+  src: url('/assets/fonts/roboto.ttf') format('truetype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+html, body, body > .ember-view {
+  height: 100%;
+}
+
+main {
+  position: relative;
+  width: 900px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 35px;
+  padding-left: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+/* Sections of the app. */
+/* Absolutely positioned to make it as simple as possible. */
+
+.edit {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  height: 10%;
+  width: 50%;
+  padding-left: 20px;
+}
+
+.chart {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  height: 50%;
+  width: 50%;
+}
+
+.table {
+  position: absolute;
+  top: 15%;
+  right: 0;
+  height: 80%;
+  width: 50%;
+}
+
+.plans {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  border: 1px dashed #000;
+  padding: 20px;
+}
+
+/* Aesthetic rules for the "edit" panel */
+/* Just makes everything line up and look consistent. */
+
+input {
+  padding: 8px;
+  height: 34px;
+}
+
+input.description {
+  width: 150px;
+}
+
+input.amount {
+  width: 80px;
+}
+
+.category-select {
+  width: 120px;
+  height: 34px;
+  margin: 10px;
+}
+
+.category-select .ember-select-choice {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #dedede;
+  margin-top: -2px;  /* Hack for alignment */
 }
