@@ -2,7 +2,23 @@
   <h1 id="title">Minipar Personal Finance</h1>
 
   <div class="edit">
-    <div class="plans">Edit</div>
+    <h3>Edit Transaction</h3>
+    {{input
+      class="description"
+      placeholder="Description"
+      value=selectedTransaction.description
+    }}
+    {{select-component
+      classNames="category-select"
+      prompt="Category"
+      content=categories
+      selection=selectedTransaction.category
+    }}
+    {{input
+      class="amount"
+      placeholder="Amount"
+      value=selectedTransaction.amount
+    }}
   </div>
 
   <div class="chart">

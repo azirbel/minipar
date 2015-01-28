@@ -54,4 +54,6 @@ export default Ember.Controller.extend({
       };
     });
   }.property('transactions.@each.{category,amount}', 'categories'),
+
+  selectedTransaction: null
 });
