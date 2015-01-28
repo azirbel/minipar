@@ -32,4 +32,26 @@ export default Ember.Controller.extend({
     });
     return [dateColumn, descriptionColumn, categoryColumn, amountColumn];
   }.property(),
+
+  categories: function() {
+    return _.uniq(this.get('transactions').map(function(transaction) {
+      return transaction.category;
+    }));
+  }.property('transactions.@each.category'),
+
+  pieData: function() {
+    var transactions = this.get('transactions');
+    var total;
+    return this.get('categories').map(function(category) {
+      total = transactions.filter(function(transaction) {
+        return transaction.category === category;
+      }).reduce(function(a, b) {
+        return a + (parseFloat(b.amount) || 0);
+      }, 0);
+      return {
+        'label': category,
+        'value': total
+      };
+    });
+  }.property('transactions.@each.{category,amount}', 'categories'),
 });
