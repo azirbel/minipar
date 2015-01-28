@@ -49,8 +49,9 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  // Make the app work when deployed to gh-pages
   if (environment === 'production') {
-
+    ENV.baseURL = '/minipar/';
   }
 
   return ENV;
