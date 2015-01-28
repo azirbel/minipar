@@ -10,6 +10,11 @@
   </div>
 
   <div class="table">
-    <div class="plans">Table</div>
+    {{table-component
+      hasFooter=false
+      columns=columns
+      content=transactions
+      selection=selectedTransaction
+    }}
   </div>
 </main>
