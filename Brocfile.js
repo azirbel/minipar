@@ -4,17 +4,35 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
-// Use `app.import` to add additional libraries to the generated
-// output files.
-//
-// If you need to use different assets in different
-// environments, specify an object as the first parameter. That
-// object's keys should be the environment name and the values
-// should be the asset to use in that environment.
-//
-// If the library that you are including contains AMD or ES6
-// modules that you would like to import into your application
-// please specify an object with the list of modules as keys
-// along with the exports of each module as its value.
+// Addepar Open Source dependencies
+app.import(app.bowerDirectory + '/lodash/dist/lodash.js');
+app.import(app.bowerDirectory + '/d3/d3.js');
+app.import(app.bowerDirectory + '/jquery-ui/ui/jquery-ui.custom.js');
+app.import(app.bowerDirectory + '/jquery-mousewheel/jquery.mousewheel.js');
+app.import(app.bowerDirectory + '/bootstrap/dist/js/bootstrap.js');
+app.import(app.bowerDirectory + '/antiscroll/antiscroll.js');
+app.import('vendor/list-view.js');
+
+// CSS dependencies
+app.import(app.bowerDirectory + '/antiscroll/antiscroll.css');
+app.import(app.bowerDirectory + '/bootstrap/dist/css/bootstrap.css');
+
+// Addepar Open Source libraries
+app.import(app.bowerDirectory + '/ember-table/dist/ember-table.js');
+app.import(app.bowerDirectory + '/ember-widgets/dist/js/ember-widgets.js');
+app.import(app.bowerDirectory + '/ember-charts/dist/ember-charts.js');
+
+// Addepar Open Source CSS dependencies
+app.import(app.bowerDirectory + '/ember-table/dist/ember-table.css');
+app.import(app.bowerDirectory + '/ember-widgets/dist/css/ember-widgets.css');
+app.import(app.bowerDirectory + '/ember-charts/dist/ember-charts.css');
+
+// Image dependencies
+app.import(app.bowerDirectory + '/ember-widgets/dist/img/select2.png', {
+  destDir: 'img'
+});
+app.import(app.bowerDirectory + '/ember-widgets/dist/img/spinner.gif', {
+  destDir: 'img'
+});
 
 module.exports = app.toTree();
